@@ -19,7 +19,6 @@ class _CategorynewsState extends State<Categorynews> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCategoryNews();
   }
@@ -40,7 +39,6 @@ class _CategorynewsState extends State<Categorynews> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'News',
@@ -58,7 +56,6 @@ class _CategorynewsState extends State<Categorynews> {
             )
           ],
         ),
-        centerTitle: true,
         elevation: 0.0,
       ),
       body: loading? Center(

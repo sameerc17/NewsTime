@@ -38,12 +38,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black12,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black12,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+//          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              width: 5.0,
+            ),
             Text(
               'News',
               style: TextStyle(
@@ -60,7 +63,6 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-        centerTitle: true,
         elevation: 0.0,
       ),
       body: loading
@@ -89,21 +91,34 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       height: 10.0,
                     ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 200.0,
+                      height: 1.0,
+                      color: Colors.white,
+                    ),
                     Text(
-                      'Top Headlines',
+                      'TOP HEADLINES',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 25.0,
+                        fontSize: 27.0,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 15.0),
+                      alignment: Alignment.center,
+                      width: 200.0,
+                      height: 1.0,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 8.0),
                       child: ListView.builder(
                           physics: ClampingScrollPhysics(),
                           shrinkWrap: true,
-//                        scrollDirection: Axis.vertical,
                           itemCount: articles.length,
                           itemBuilder: (context, index) {
                             return newstile(
@@ -143,7 +158,6 @@ class categorytile extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(40),
               child: CachedNetworkImage(
                 imageUrl: imageurl,
                 width: 120.0,
@@ -186,29 +200,35 @@ class newstile extends StatelessWidget {
                     )));
       },
       child: Container(
-        padding: EdgeInsets.all(15.0),
+        color: Colors.blueGrey.shade900,
+        margin: EdgeInsets.symmetric(vertical: 7.5, horizontal: 15.0),
         child: Column(
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(30),
               child: Image.network(imageurl),
             ),
             SizedBox(
               height: 8.0,
             ),
-            Text(
-              title,
-              style: TextStyle(
-                  fontSize: 19.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 3.0, vertical: 2.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                    fontSize: 19.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 3.0, vertical: 1.0),
+              child: Text(
+                description,
+                style: TextStyle(fontSize: 15.0, color: Colors.white70),
+              ),
             ),
             SizedBox(
-              height: 5.0,
-            ),
-            Text(
-              description,
-              style: TextStyle(fontSize: 15.0, color: Colors.white54),
+              height: 10.0,
             ),
           ],
         ),

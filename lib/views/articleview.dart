@@ -21,7 +21,6 @@ class _ArticleviewState extends State<Articleview> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'News',
