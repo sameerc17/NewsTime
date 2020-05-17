@@ -1,10 +1,8 @@
 # newstime
 
-A new Flutter application.
+A flutter app used to view the latest news. You can also browse through categories to get category-specific news. It uses a News API (refer https://newsapi.org/ )
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
