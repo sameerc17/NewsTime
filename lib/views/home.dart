@@ -200,8 +200,18 @@ class newstile extends StatelessWidget {
                     )));
       },
       child: Container(
-        color: Colors.blueGrey.shade900,
-        margin: EdgeInsets.symmetric(vertical: 7.5, horizontal: 15.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Color(0xff414141),
+              Color(0xff000000
+              ),
+            ],
+          ),
+        ),
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15.0),
         child: Column(
           children: <Widget>[
             ClipRRect(
